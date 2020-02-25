@@ -14,7 +14,7 @@ class Universe {
     }
 
     setSize(number) {
-        return this.size = number;
+       	this.size = number;
     }
 }
 
