@@ -1,13 +1,16 @@
 fetch('http://www.json-generator.com/api/json/get/cfQCylRjuG')
-    .then(function (response) {
-        response.json().then(function (json) {
+    .then(response => {
+        response.json()
+        .then(json => {
             if (json.getUsersData) {
-                fetch('http://www.json-generator.com/api/json/get/cfVGucaXPC')
-                    .then(function (response) {
-                        response.json().then(function (json) {
-                            console.log(json)
-                        })
-                    })
-            }
+            fetch('http://www.json-generator.com/api/json/get/cfVGucaXPC')
+            .then(response => {
+             response.json()
+            .then(json => {
+             console.log(json)
+             })
         })
+        }
     })
+ })
+ 
