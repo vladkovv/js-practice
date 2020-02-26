@@ -6,10 +6,8 @@ const url = [
     'http://www.json-generator.com/api/json/get/ceQMMKpidK'
 ];
 
-let fetchData = url.map(url => fetch(url)
-.then(data => data.json()))
+Promise.all(url.map(url => fetch(url)
+    .then(data => data.json())))
+    .then(data => console.log(data));
 
-Promise.all(fetchData)
-.then(data => console.log(data));
-
-
+    
