@@ -1,16 +1,14 @@
-const firstResponse = fetch('http://www.json-generator.com/api/json/get/cfQCylRjuG');
-let secondResponse = null;
+const response = fetch('http://www.json-generator.com/api/json/get/cfQCylRjuG');
 
-firstResponse
+response
         .then(response => response.json())
         .then(json => {
         if (json.getUsersData) {
-            secondResponse = fetch('http://www.json-generator.com/api/json/get/cfVGucaXPC');
+            return fetch('http://www.json-generator.com/api/json/get/cfVGucaXPC');
         }
- secondResponse
+    })
         .then(response => response.json()
         .then(json => console.log(json))       
     )
-    })
 
  
