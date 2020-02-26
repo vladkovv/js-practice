@@ -9,5 +9,4 @@ const url = [
 Promise.all(url.map(url => fetch(url)
     .then(data => data.json())))
     .then(data => console.log(data));
-
     
