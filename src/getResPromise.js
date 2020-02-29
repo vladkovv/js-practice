@@ -1,14 +1,13 @@
 function getResolvedPromise(code) {
-    let promise = new Promise((resolve,reject) => {
-        if (code > 300) {
-            reject('Error');
-        }
-        
-        resolve(code);
-    })
+    new Promise((resolve, reject) => {
+            if (code > 300) {
+                reject('Error');
+            }
 
-    promise.then(result => console.log(`Successfully with code: ${result}`));
-    promise.catch(error => console.log(error));
-    promise.finally(console.log('Good'));
+            resolve(code);
+        })
+        .then(result => console.log(`Successfully with code: ${result}`))
+        .catch(error => console.log(error))
+        .finally(console.log('Good'));
 
 }
