@@ -2,9 +2,11 @@ function objectCreate(proto, properties) {
     function func() {}
     func.prototype = proto;
     const obj = new func();
-    if (properties !== undefined) {
+
+    if (properties) {
         Object.defineProperties(obj, properties);
     }
+
     return obj
 }
 
@@ -17,5 +19,6 @@ const obj2 = objectCreate(obj1, {
         value: 'Max'
     }
 })
+
 console.log(obj2);
 obj2.sayHi();
