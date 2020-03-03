@@ -1,6 +1,7 @@
 function objectCreate(proto, properties) {
-    const obj = {}
-    Object.setPrototypeOf(obj, proto);
+    function func() {}
+    func.prototype = proto;
+    const obj = new func();
     if (properties !== undefined) {
         Object.defineProperties(obj, properties);
     }
