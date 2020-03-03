@@ -1,8 +1,10 @@
-function myNew(func) {
+function myNew(func, ...args) {
     let obj = Object.create(func.prototype);
-    let args = Array.from(arguments);
-    func.apply(obj, args.slice(1));
+    func.apply(obj, args);
+    
+    if(obj instanceof Object) {
     return obj;
+    }
 }
 
 let Cat = function (sound) {
