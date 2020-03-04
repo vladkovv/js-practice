@@ -1,14 +1,16 @@
-function showFullName() {
-    alert( this.firstName + " " + this.lastName );
+function showFullName(firstPart, lastPart) {
+    console.log( this[firstPart] + " " + this[lastPart] );
   }
   
   const user = {
     firstName: "Василий",
-    lastName: "Петров"
+    lastName: "Петров",
+    patronym: 'Иванович'
   };
-  
+
 Function.prototype.myCall = function(context, ...args) {
     return this.bind(context, ...args)()
 }
 
-showFullName.myCall(user)
+showFullName.myCall(user, 'firstName', 'lastName')
+showFullName.myCall(user, 'firstName', 'patronym')
