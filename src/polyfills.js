@@ -18,10 +18,7 @@ Function.prototype.myApply = function (context, args) {
 }
 
 Function.prototype.myBind = function (context, ...args) {
-    _this = this;
-    return function () {
-        return _this.apply(context, args)
-    }
+    return () => this.apply(context, args)
 }
 
 showFullName.myCall(user, 'firstName', 'lastName');
