@@ -9,7 +9,7 @@ function showFullName(firstPart, lastPart) {
   };
 
 Function.prototype.myCall = function(context, ...args) {
-    return this.bind(context, ...args)()
+    return this.apply(context, args)
 }
 
 showFullName.myCall(user, 'firstName', 'lastName')
