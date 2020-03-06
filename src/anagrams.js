@@ -12,7 +12,7 @@ const input = [
 
 function anagram(arr) {
     const ordered = [];
-    
+
     arr.forEach((item) => {
         let word = item.split('').sort().join('');
 
