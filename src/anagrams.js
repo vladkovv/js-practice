@@ -8,21 +8,21 @@ const input = [
     'кластер',
     'сталкер',
     'стрелка'
-  ];
-  function anagram (arr) {
-    const ordered = [];
+];
 
-    for (let i = 0; i < arr.length; i++) {
-        let word = arr[i].split('').sort().join('');
+function anagram(arr) {
+    const ordered = [];
+    
+    arr.forEach((item) => {
+        let word = item.split('').sort().join('');
 
         if (!ordered.hasOwnProperty(word)) {
             ordered[word] = [];
         }
 
-        ordered[word].push(arr[i]);
-    } 
+        ordered[word].push(item);
+    })
 
     return ordered;
 }
-
 console.log(anagram(input))
